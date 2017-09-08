@@ -83,10 +83,9 @@
   </dependencies>
 
   <build>
-    <finalName>microservices</finalName>
-<!--   
+    <finalName>microservices</finalName>  
     <defaultGoal>spring-boot:run</defaultGoal>
- -->
+
     <plugins>
 
       <plugin>
