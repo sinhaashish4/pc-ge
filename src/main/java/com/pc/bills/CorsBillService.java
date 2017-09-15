@@ -24,11 +24,19 @@ public class CorsBillService {
 		return mock.getBills();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/{accountId}")
 	public Bill read(@PathVariable("accountId") Integer accountId) throws Exception {
 		List<Bill> list = billMock.getBills();
 		Bill bill = list.stream().filter(b -> b.getAccountId().equals(accountId)).findFirst().get();
 		return bill;
+	}
+
+	@CrossOrigin
+	@GetMapping("/history/{accountId}")
+	public List<Bill> history(@PathVariable("accountId") Integer accountId) throws Exception {
+		List<Bill> list = billMock.getHistor(accountId);
+		return list;
 	}
 
 }

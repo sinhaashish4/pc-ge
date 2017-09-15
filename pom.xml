@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.pc</groupId>
-  <artifactId>microservices</artifactId>
+  <artifactId>util-services</artifactId>
   <version>1.0</version>
 
   <name>microservices</name>
@@ -14,9 +14,8 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
-
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,12 +60,12 @@
   </dependencies>
 
   <build>
-    <finalName>microservices</finalName>  
+    <finalName>microservices</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>        
+      </plugin>
     </plugins>
   </build>
 </project>
