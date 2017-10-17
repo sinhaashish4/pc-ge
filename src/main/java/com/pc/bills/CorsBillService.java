@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/bills")
+//@RequestMapping("/bills")
 public class CorsBillService {
 	@Autowired
 	private BillMock billMock;
@@ -19,13 +19,13 @@ public class CorsBillService {
 	@Autowired
 	private BillMock mock;
 
-	@GetMapping
+	@GetMapping("/")
 	public List<Bill> getBills() {
 		return mock.getBills();
 	}
 	
 	@CrossOrigin
-	@GetMapping("/{accountId}")
+	@GetMapping("/bills/{accountId}")
 	public Bill read(@PathVariable("accountId") Integer accountId) throws Exception {
 		List<Bill> list = billMock.getBills();
 		Bill bill = list.stream().filter(b -> b.getAccountId().equals(accountId)).findFirst().get();
@@ -33,7 +33,7 @@ public class CorsBillService {
 	}
 
 	@CrossOrigin
-	@GetMapping("/history/{accountId}")
+	@GetMapping("/bills/history/{accountId}")
 	public List<Bill> history(@PathVariable("accountId") Integer accountId) throws Exception {
 		List<Bill> list = billMock.getHistor(accountId);
 		return list;
